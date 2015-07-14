@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri name="http://com.exilant.exility/schema" uri="platform:/resource/simpity-tutorial/WebContent/WEB-INF/exilityResource/schema.xsd"/>
+  <uri name="http://com.exilant.exility/dataTypes" uri="platform:/resource/simpity-tutorial/WebContent/WEB-INF/resource/dataTypes.xsd"/>
+  <uri name="http://com.exilant.exility/page" uri="platform:/resource/simpity-tutorial/WebContent/WEB-INF/exilityResource/page.xsd"/>
+</catalog>
