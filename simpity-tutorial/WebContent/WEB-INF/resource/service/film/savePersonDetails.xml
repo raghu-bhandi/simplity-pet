@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<service xmlns="http://com.exilant.exility/schema" 
+	name="savePersonDetails"  
+	dataAccessType="readWrite"
+    description="save person details">
+    <inputRecords>
+    	<inputRecord recordName="eta.personMaster"
+    				 purpose="save"/>
+    </inputRecords>
+    <outputRecords>
+    	<outputRecord recordName="eta.personMaster"/>
+    </outputRecords>
+
+  <steps>
+  
+  <taskStep description="save person master with key"  >
+  	<task>
+  		<tableSaveTask
+  			taskName="savePersonMaster" 
+  			recordName="eta.personMaster" 
+  			/>
+  	</task>
+  	</taskStep>
+  </steps>
+</service>

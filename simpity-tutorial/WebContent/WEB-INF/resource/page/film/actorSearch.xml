@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page   xmlns="http://com.exilant.exility/page" 
+		name="actorSearch" 
+		module="film"
+		description="search for actors"
+		> 
+	<actions>
+	<serverAction name="filter"
+				  serviceId="filter.film.actor"
+				  submitForm="true"
+				  disableForm="true"
+				/>
+	<closeAction name="close"/>
+	<!-- 
+		we want pop-up window edit this actor's details.
+		Also, we do not want to synch-up with the server,
+		but do a local update of details from the pop-up page back to this page.
+		refer to actorEdit to see how it connects to this page with updated data
+	 -->
+	<navigationAction name="edit"
+					  pageToGo="film/actorEdit.htm" 
+					  windowDisposal="popup"
+					  queryFieldNames="actorId" 
+					  />
+	<!-- 
+		we would like to get the latest list from server after adding this actor
+	 -->					  
+		<navigationAction 
+			name="new"
+			pageToGo="film/actorEdit.htm" 
+			windowDisposal="reset"
+		/>
+	</actions>
+	<panels>
+		<displayPanel name="details" 
+					  recordName="film.actor"
+					  elementsPerRow="2"
+		>
+			<elements>
+				<filterField name="firstName"/>
+				<filterField name="lastName"/>
+			</elements>
+		
+		</displayPanel>
+		<buttonPanel name="buttons">
+			<elements>
+				<buttonElement name="goButton" label="Get Actors" onClickActionName="filter"/>
+				<buttonElement name="close" label="Close" onClickActionName="close"/>
+				<buttonElement name="new" label="New Actor" onClickActionName="new"/>
+			</elements>
+		</buttonPanel>
+		<listPanel name="actorsList"
+				   recordName="film.actor" 
+				   tableName="actors" 
+				   fieldsAreOutputByDefault="true"
+				   onClickActionName="edit"
+				   pageSize="5"/>
+	</panels>
+</page>
+

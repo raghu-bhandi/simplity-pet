@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<service xmlns="http://com.exilant.exility/schema" 
+	name="filterActor"  
+	dataAccessType="readOnly"
+    description="Filter rows from person master">
+    <inputRecords>
+    	<inputRecord recordName="film.actor"
+    				 purpose="filter"/>
+    </inputRecords>
+    <outputRecords>
+    	<outputRecord recordName="film.actor" gridName="actors"/>
+    </outputRecords>
+
+  <steps>
+  <taskStep description="filter persons"  >
+  	<task>
+  		<tableFilterTask
+  			taskName="filterPersonMaster" 
+  			recordName="film.actor" 
+  			gridName="actors"
+  			/>
+  	</task>
+  	</taskStep>
+  </steps>
+</service>

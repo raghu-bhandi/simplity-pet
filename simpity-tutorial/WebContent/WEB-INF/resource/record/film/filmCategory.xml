@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<record xmlns="http://com.exilant.exility/schema"
+	name="filmCategory" 
+	recordType="storage"
+	tableName="film_category"
+	description="categories of a film"
+	>
+	<fields>
+		<field name="filmId"
+			description="film"
+			columnName="film_id" 
+			columnType="foreignKey" 
+			referredField="filmId"
+			referredRecord="film.film"
+			defaultInputType="hiddenField" 
+			label="filmId" 
+		/>
+
+		<field name="categoryId"
+			columnName="category_id" 
+			columnType="foreignKey" 
+			referredField="categoryId"
+			referredRecord="film.category"
+			dataType="id"
+			defaultInputType="assistedInputField" 
+			label="Category" 
+			description="category of this film"
+		>
+			<pageFieldAttributes 
+				listServiceId="list.categories" 
+				sameListForAllRows="true"
+			/>
+		</field>
+
+		<field  name="lastUpdate"
+			columnName="last_update" 
+			columnType="modifiedTimeStamp" 
+			dataType="timeStamp"
+			defaultInputType="hiddenField" 
+			label="lastUpdate"
+			description="time stamp"
+		/>
+	</fields>
+</record>

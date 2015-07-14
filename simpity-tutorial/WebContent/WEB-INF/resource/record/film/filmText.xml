@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<record xmlns="http://com.exilant.exility/schema"
+	name="filmText" 
+	recordType="storage" 
+	tableName="film_text"
+	description="films with all relevant text for searching"
+	>
+	<fields>
+		<field name="filmId"
+			columnName="film_id" 
+			columnType="primaryKey" 
+			dataType="id"
+			defaultInputType="hiddenField" 
+			label="filmId" 
+			description="internal key"
+		/>
+
+		<field name="title"
+			columnName="title" 
+			columnType="data" 
+			dataType="longName"
+			defaultInputType="textInputField" 
+			label="Film Title" 
+			description="film title"
+		/>
+		
+		<field name="description"
+			columnName="description" 
+			columnType="data" 
+			dataType="text"
+			defaultInputType="textAreaField" 
+			isNullable="true" 
+			label="Description"
+			description="description"
+		/>
+	</fields>
+</record>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <link rel="stylesheet" href="../../css/home/default.css" type="text/css" />
+    <script type="text/javascript" src="../../exilityClient/js/api/exilityLoader.js"></script>
+    
+<script type="text/javascript" src="actorEdit.metadata.js" ></script> 
+</head>
+<body onload="exilPageLoad();" style="display: none;" onunload="exilPageUnload();"
+    onscroll="adjustFrameHeightToBodyHeight();">
+    <form id="form1" onsubmit="if(event.preventDefault) event.preventDefault(); else event.returnValue= false; return false;" action="" accept-charset="UTF-8">
+    <div class="page">
+        <div id="pageTitle"></div>
+        <div class="expandedfieldset" id="detailsTop" >
+<div class="displayPanel" id="details" >  <table class="fieldsTable"  id="detailsFieldsTable" >
+<col id="detailsCol1" /><col id="detailsCol2" /><col id="detailsCol3" /><col id="detailsCol4" /><tr>
+<td class="labelCell" id="firstNameLabelCell" ><div class="requiredLabel" id="firstNameLabel"  >First Name</div></td><td class="fieldCell" id="firstNameFieldCell" >
+<input type="text" autocomplete="off" class="inputfield"  size="20"  maxlength="45"  id="firstName"  onchange="P2.fieldChanged(this, 'firstName');" />&nbsp;
+<input type="hidden"  id="actorId"  onchange="P2.fieldChanged(this, 'actorId');" /></td>
+<td class="labelCell" id="lastNameLabelCell" ><div class="requiredLabel" id="lastNameLabel"  >lastName</div></td><td class="fieldCell" id="lastNameFieldCell" >
+<input type="text" autocomplete="off" class="inputfield"  size="20"  maxlength="45"  id="lastName"  onchange="P2.fieldChanged(this, 'lastName');" />&nbsp;
+<input type="hidden"  id="lastUpdate"  onchange="P2.fieldChanged(this, 'lastUpdate');" /></td></tr> </table>  </div></div><div class="expandedfieldset" id="actionButtonsTop" >
+<div class="buttonpanel" id="actionButtons" >
+<input type="button" value="Save" id="save" onclick="P2.act(this, 'save', 'save', event);" style="cursor:pointer;"  />
+<input type="button" value="Reset" id="reset" onclick="P2.act(this, 'reset', 'reset', event);" style="cursor:pointer;"  />
+<input type="button" value="Cancel" id="cancel" onclick="P2.act(this, 'cancel', 'cancel', event);" style="cursor:pointer;"  />
+<input type="button" value="Close" id="close" onclick="P2.act(this, 'close', 'close', event);" style="cursor:pointer;"  /></div></div>
+    </div>
+    </form>
+</body>
+</html>

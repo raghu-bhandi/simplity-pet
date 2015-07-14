@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page   xmlns="http://com.exilant.exility/page" 
+		name="category" 
+		module="film"
+		onLoadActionNames="filter"
+		description="manage categories. We expect a handful of categories.
+		 Hence we have chosen straight away a grid to manage all of them in one shot."
+		> 
+	<actions>
+	<!--  simple trick to get all rows. We use filter service with no conditions -->
+	<serverAction name="filter"
+				  serviceId="filter.film.category"
+				/>
+	<serverAction name="save"
+				  serviceId="save.film.category"
+				  submitForm="true"
+				  disableForm="true"
+				  callBackActionName="filter"
+			/>
+	<!--  updates happen thru jtable call-back -->
+	<closeAction name="close"/>
+	</actions>
+	<panels>
+	<!-- 
+		<customPanel name="categoryDetails" 
+				panelClassName="JtablePanel"
+				tableName="categories"/>
+				 -->
+		<gridPanel name="categoryList" 
+				rowsCanBeAdded="true" 
+				rowsCanBeDeleted="true" 
+				tableName="categories"
+				recordName="film.category"
+				idFieldName="categoryId"
+				keyFieldName="name"
+				actionFieldName="bulkAction"
+				sendAffectedRowsOnly="true"
+				></gridPanel>
+		<buttonPanel name="buttons">
+			<elements>
+				<buttonElement name="save" label="Save" onClickActionName="save"/>
+				<buttonElement name="close" label="Close" onClickActionName="close"/>
+			</elements>
+		</buttonPanel>
+	</panels>
+</page>
+

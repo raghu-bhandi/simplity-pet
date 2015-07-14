@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page   xmlns="http://com.exilant.exility/page" 
+		name="language" 
+		module="film"
+		onLoadActionNames="filter"
+		scriptsToInclude="film/language.js,
+		../vendors/jquery-1.11.3.min.js
+		,../vendors/jquery-ui-1.11.4/jquery-ui.min.js
+		,../vendors/jquery-ui-1.11.4/jquery-ui.min.css
+		,../vendors/jquery-ui-1.11.4/jquery-ui.theme.min.css
+		,../vendors/jtable.2.4.0/jquery.jtable.min.js
+		,../vendors/jtable.2.4.0/themes/metro/blue/jtable.min.css
+		"
+		description="manage languages. We expect a handful of categories.
+		 Hence we have chosen this page to demonstrate use of jTable."
+		> 
+	<actions>
+	<!--  simple trick to get all rows. We use filter service with no conditions -->
+	<serverAction name="filter"
+				  serviceId="filter.film.language"
+				/>
+	<!--  updates happen thru jtable call-back -->
+	<serverAction name="save" serviceId="save.film.language"/>
+	<closeAction name="close"/>
+	</actions>
+	<panels>
+		<gridPanel name="languageList" 
+				customPanelName="JtablePanel"
+				tableName="languages"
+				recordName="film.language"
+				rowsCanBeAdded="true"
+				rowsCanBeDeleted="true"
+				rowsCanBeModified="true" 
+				idFieldName="languageId"
+				pageSize="5"
+				label="Languages"
+				rowSaveActionName="save"
+				/>
+		<buttonPanel name="buttons">
+			<elements>
+				<buttonElement name="close" label="Close" onClickActionName="close"/>
+			</elements>
+		</buttonPanel>
+	</panels>
+</page>
+

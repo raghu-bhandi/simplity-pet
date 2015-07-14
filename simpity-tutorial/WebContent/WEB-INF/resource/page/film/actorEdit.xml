@@ -1,0 +1,52 @@
+<page   xmlns="http://com.exilant.exility/page" 
+		name="actorEdit" 
+		module="film"
+		description="show details of an actor"
+		onModifyModeActionNames="getDetails"
+		minParametersToFireOnLoad="1"
+		trackFieldChanges="true"
+		onFormChangeActionName="showCancel"
+		onFormResetActionName="hideCancel"
+		> 
+	<pageParameters>
+		<pageParameter name="actorId"
+				dataType="id"
+				isPrimaryKey="true"
+				/>
+	</pageParameters>
+	<actions>
+	<serverAction name="getDetails"
+				  serviceId="get.film.actor"
+				  submitFields="actorId"
+				/>
+	<serverAction name="save"
+				  serviceId="save.film.actor"
+				  submitForm="true"
+				  disableForm="true"
+				  resetFormModifiedState="true"
+				/>
+	<closeAction name="close"/>
+	<resetAction name="reset" warnIfFormIsModified="true"/>
+	<closeAction name="cancel" warnIfFormIsModified="true"/>
+	<dummyAction name="showCancel" enableFields="cancel,save" disableFields="close"/>
+	<dummyAction name="hideCancel" disableFields="cancel,save" enableFields="close"/>
+	</actions>
+	<panels> 
+		<displayPanel name="details" 
+					  recordName="film.actor"
+					  elementsPerRow="2"
+		>
+		
+		</displayPanel>
+		
+		<buttonPanel name="actionButtons">
+			<elements>
+				<buttonElement name="save"  label="Save" onClickActionName="save" />
+				<buttonElement name="reset" label="Reset" onClickActionName="reset" />
+				<buttonElement name="cancel" label="Cancel" onClickActionName="cancel" />
+				<buttonElement name="close" label="Close" onClickActionName="close"/>
+			</elements>
+		</buttonPanel>
+	</panels>
+</page>
+

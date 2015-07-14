@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <link rel="stylesheet" href="../../css/home/default.css" type="text/css" />
+    <script type="text/javascript" src="../../exilityClient/js/api/exilityLoader.js"></script>
+    
+<script type="text/javascript" src="test.metadata.js" ></script> 
+<script type="text/javascript" src="../../js/test/test.js" ></script> 
+<script type="text/javascript" src="../../js/../vendors/jquery-1.11.3.min.js" ></script> 
+<script type="text/javascript" src="../../js/../vendors/jquery-ui-1.11.4/jquery-ui.min.js" ></script> 
+<link rel="stylesheet" type="text/css" href="../../css/../vendors/jquery-ui-1.11.4/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../css/../vendors/jquery-ui-1.11.4/jquery-ui.theme.min.css" />
+<script type="text/javascript" src="../../js/../vendors/jtable.2.4.0/jquery.jtable.min.js" ></script> 
+<link rel="stylesheet" type="text/css" href="../../css/../vendors/jtable.2.4.0/themes/metro/blue/jtable.min.css" />
+</head>
+<body onload="exilPageLoad();" style="display: none;" onunload="exilPageUnload();"
+    onscroll="adjustFrameHeightToBodyHeight();">
+    <form id="form1" onsubmit="if(event.preventDefault) event.preventDefault(); else event.returnValue= false; return false;" action="" accept-charset="UTF-8">
+    <div class="page">
+        <div id="pageTitle"></div>
+        <div class="expandedfieldset" id="buttonsTop" >
+<div class="displayPanel" id="buttons" >  <table class="fieldsTable"  id="buttonsFieldsTable" >
+<col id="buttonsCol1" /><tr><td>
+<input type="button" value="Load" id="load" onclick="P2.act(this, 'load', 'load', event);" style="cursor:pointer;"  /></td></tr> </table>  </div></div><div class="expandedfieldset" id="testTop" >
+<div data-panelType="JtablePanel" id="test"  ><div id="persons" ></div></div></div>
+    </div>
+    </form>
+</body>
+</html>

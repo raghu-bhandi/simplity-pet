@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<record xmlns="http://com.exilant.exility/schema"
+	name="language"
+	keyToBeGenerated="true" 
+	recordType="storage" 
+	tableName="language"
+	description="language in which a film is available"
+	defaultGridName="languages"
+	>
+	<fields>
+		<field name="languageId"
+			columnName="language_id" 
+			columnType="primaryKey" 
+			dataType="id"
+			defaultInputType="hiddenField" 
+			label="languageId"
+			description="primary key" >
+			<pageFieldAttributes />
+		</field>
+		<field 
+			columnName="name" 
+			columnType="data" 
+			dataType="shortName"
+			defaultInputType="textInputField" 
+			label="Language" 
+			name="name"
+			description="Language "
+			>
+			<pageFieldAttributes />
+		</field>
+		<field 
+			columnName="last_update" 
+			columnType="modifiedTimeStamp" 
+			dataType="timeStamp"
+			defaultInputType="hiddenField" 
+			label="lastUpdate" 
+			name="lastUpdate"
+			description="timestamp"
+			>
+			<pageFieldAttributes />
+		</field>
+	</fields>
+</record>
