@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project default="createJar" name="simplity-pet">
+	<property name="bin" value="${basedir}/build/bin/" />
+	<property name="jarName" value="simplity-pet.jar"/>
+	<property name="jar" value="${basedir}/WebContent/WEB-INF/lib/${jarName}" />
+	<target name="createJar" description="Create jar file">
+		<!-- 
+		<jar basedir="${bin}" jarfile="${jar}" />
+		<copy file="${jar}" overwrite="true" todir="D:/jars/"></copy>
+	-->
+	<jar destfile="${jar}">
+	    <fileset dir="${bin}" />
+	</jar>
+	</target>
+
+</project>
