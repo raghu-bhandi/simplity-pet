@@ -5,12 +5,19 @@
 	sendTraceToClient="true"
 	logSqls="true" 
 	autoLoginUserId="111"
+	dbVendor="oracle" 
+	
+	dbDriverClassName="oracle.jdbc.OracleDriver" 
+	
+	connectionString="jdbc:oracle:thin:simplity/simplity@localhost:1521:XE" 
 
+>
+<!-- 
 	dbVendor="mysql"
 	dbDriverClassName="com.mysql.jdbc.Driver" 
 	connectionString="jdbc:mysql://localhost:3306/petclinic?user=pc&amp;password=pc" 
 	
 	exceptionListener="org.simplity.kernel.ExampleExceptionListener"
->
 
+ -->
 </application>
